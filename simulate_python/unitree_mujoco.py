@@ -7,6 +7,8 @@ import threading
 from unitree_sdk2py.core.channel import ChannelFactoryInitialize
 from unitree_sdk2py_bridge import UnitreeSdk2Bridge, ElasticBand
 
+from ball_position_pub import BallPositionPub
+
 import config
 
 
@@ -40,6 +42,7 @@ def SimulationThread():
 
     ChannelFactoryInitialize(config.DOMAIN_ID, config.INTERFACE)
     unitree = UnitreeSdk2Bridge(mj_model, mj_data)
+    BallPositionPub(mj_model, mj_data)
 
     if config.USE_JOYSTICK:
         unitree.SetupJoystick(device_id=0, js_type=config.JOYSTICK_TYPE)
@@ -57,6 +60,15 @@ def SimulationThread():
                     mj_data.qpos[:3], mj_data.qvel[:3]
                 )
         mujoco.mj_step(mj_model, mj_data)
+        
+        # # get the body names
+        # names = mj_model.names
+        # name_bodyadr = mj_model.name_bodyadr
+        # body_names = []
+        # for addr in name_bodyadr:
+        #     body_name = names[addr:].split(b'\0')[0].decode('utf-8')
+        #     body_names.append(body_name)
+        # print(body_names)
 
         locker.release()
 
