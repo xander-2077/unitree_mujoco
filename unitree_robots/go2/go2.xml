@@ -29,8 +29,8 @@
       <default class="collision">
         <geom group="3"/>
         <default class="foot">
-          <geom size="0.022" pos="-0.002 0 -0.213" priority="1" condim="6"
-            friction="0.4 0.02 0.01"/>
+          <!-- <geom size="0.022" pos="-0.002 0 -0.213" priority="1" condim="6" friction="0.4 0.02 0.01"/> -->
+          <geom size="0.022" pos="-0.002 0 -0.213" priority="1" condim="6" friction="0.8 0.1 0.01"/>
         </default>
       </default>
     </default>
@@ -282,8 +282,13 @@
     <framelinvel name="frame_vel" objtype="site" objname="imu" />
   </sensor>
 
-  <keyframe>
+  <!-- <keyframe>
     <key name="home" qpos="0 0 0.27 1 0 0 0 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8"
+      ctrl="0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8" />
+  </keyframe> -->
+  <!-- add ball + 7 dims -->
+  <keyframe>
+    <key name="home" qpos="0 0 0.27 1 0 0 0 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8 0.5 0 0.09 1 0 0 0"
       ctrl="0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8 0 0.9 -1.8" />
   </keyframe>
 </mujoco>
