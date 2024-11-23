@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
-from unitree_sdk2py.core.channel import ChannelSubscriber, ChannelPublisher
+from unitree_sdk2py.core.channel import ChannelPublisher
 from unitree_sdk2py.utils.thread import RecurrentThread
 from unitree_sdk2py.idl.geometry_msgs.msg.dds_ import Point_
 from unitree_sdk2py.idl.default import geometry_msgs_msg_dds__Point_ as Point_default
