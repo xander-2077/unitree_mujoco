@@ -38,8 +38,8 @@ class BallPositionPub():
         base_link_pos = np.array(self.mj_data.xpos[1])
         base_link_quat = np.array(self.mj_data.xquat[1])
         ball_pos = np.array(self.mj_data.xpos[-1])
-        
-        rotation_matrix = R.from_quat(base_link_quat, scalar_first=True).as_matrix()
+                
+        rotation_matrix = R.from_quat(np.roll(base_link_quat, -1)).as_matrix()
         relative_pos_world = ball_pos - base_link_pos
         ball_pos_robot = rotation_matrix.T @ relative_pos_world
 

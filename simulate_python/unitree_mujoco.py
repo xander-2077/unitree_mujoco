@@ -69,6 +69,18 @@ def SimulationThread():
         #     body_name = names[addr:].split(b'\0')[0].decode('utf-8')
         #     body_names.append(body_name)
         # print(body_names)
+        
+        # # get the sensor names
+        # names = mj_model.names
+        # name_sensoradr = mj_model.name_sensoradr
+        # sensor_names = []
+        # for addr in name_sensoradr:
+        #     sensor_name = names[addr:].split(b'\0')[0].decode('utf-8')
+        #     sensor_names.append(sensor_name)
+        # print(sensor_names)
+        
+        # print(f"sensordata_pos: {mj_data.sensordata[:12]}")
+        # print(f"sensordata_vel: {mj_data.sensordata[12:24]}")
 
         locker.release()
 

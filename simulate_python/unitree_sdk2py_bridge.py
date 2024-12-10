@@ -121,6 +121,9 @@ class UnitreeSdk2Bridge:
                         - self.mj_data.sensordata[i + self.num_motor]
                     )
                 )
+            # print(f"mj_Data.ctrl: {self.mj_data.ctrl}")
+            # print(f"sensordata_pos: {self.mj_data.sensordata[:self.num_motor]}")
+            # print(f"sensordata_vel: {self.mj_data.sensordata[self.num_motor:2*self.num_motor]}")
 
     def PublishLowState(self):
         if self.mj_data != None:
