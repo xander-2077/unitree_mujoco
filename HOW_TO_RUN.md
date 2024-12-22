@@ -19,6 +19,8 @@ The config file is in `/simulate/config.yaml`.
 
 ## Python simulator
 
+> mujoco version: 3.2.1
+
 Firstly, activate venv: 
 ```
 source /home/zdj/Quadruped/go2/unitree/unitree_sdk2_python/venv/bin/activate
