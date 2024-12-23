@@ -25,6 +25,7 @@
       <body name="soccer_ball" pos="0.5 0 0.09">
         <freejoint/>
         <geom type="sphere" size="0.0889" rgba="0 1 0 0.8" mass="0.318" material="groundplane" priority="1" condim="6" friction="0.7 0.05 0.0005"/>
+        <!-- 分别为切向、扭转和滚动摩擦系数 -->
       </body>
     </worldbody>
 
