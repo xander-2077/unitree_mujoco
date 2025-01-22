@@ -117,11 +117,14 @@ class TerrainGenerator:
                   height=0.15,
                   length=1.5,
                   stair_nums=10):
+        h = height
 
         local_pos = [0.0, 0.0, -0.5 * height]
         for i in range(stair_nums):
             local_pos[0] += width
-            local_pos[2] += height
+            # local_pos[2] += height
+            height += h
+            
             x, y = rot2d(local_pos[0], local_pos[1], yaw)
             self.AddBox([x + init_pos[0], y + init_pos[1], local_pos[2]],
                         [0.0, 0.0, yaw], [width, length, height])
@@ -273,7 +276,7 @@ if __name__ == "__main__":
               size=[3, 1.5, 0.1])
 
     # Stairs
-    tg.AddStairs(init_pos=[1.0, 4.0, 0.0], yaw=0.0)
+    tg.AddStairs(init_pos=[1.0, 4.0, 0.0], yaw=0.0, height=0.05, stair_nums=20)
 
     # Suspend stairs
     tg.AddSuspendStairs(init_pos=[1.0, 6.0, 0.0], yaw=0.0)
