@@ -33,8 +33,8 @@ class BallPositionPub():
             self.ball_position.z = 0.0
             
             # TODO: add noise
-            self.ball_position.x += np.random.normal(0, 0.5)
-            self.ball_position.y += np.random.normal(0, 0.5)
+            # self.ball_position.x += np.random.normal(0, 0.5)
+            # self.ball_position.y += np.random.normal(0, 0.5)
             
             self.ball_pos_puber.Write(self.ball_position)
             # print(self.ball_position)
